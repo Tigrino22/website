@@ -1,7 +1,8 @@
-
-
 .text-white {
     color: #FFF;
+}
+.mt-navbar {
+    margin-top: 4.5rem !important;
 }
 
 .mt-10 {
@@ -13,4 +14,61 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+/********************/
+/*     Services     */
+/********************/
+.cards-1 {
+	padding-top: 5rem;
+	padding-bottom: 2.5rem;
+}
+
+.cards-1 .card {
+	margin-bottom: 5rem;
+	padding: 3rem 2rem;
+	border: 2px solid #5e6576;
+	border-radius: 20px;
+	background-color: transparent;
+}
+
+.cards-1 .card-icon {
+	width: 90px;
+	height: 90px;
+	margin-bottom: 1.875rem;
+	text-align: center;
+	background-size: 90px 90px;
+}
+
+.cards-1 .card-icon .fas,
+.cards-1 .card-icon .far {
+	margin-right: 0.75rem;
+	color: #ffffff;
+	font-size: 2rem;
+	line-height: 98px;
+}
+
+.cards-1 .card-body {
+	padding: 0;
+}
+
+.cards-1 .card-title {
+	margin-bottom: 1.125rem;
+}
+
+.cards-1 .card-body p {
+	margin-bottom: 1.125rem;
+}
+
+.cards-1 .list-unstyled {
+	margin-bottom: 0;
+}
+
+.cards-1 .list-unstyled .fas {
+	font-size: 0.875rem;
+	line-height: 1.625rem;
+}
+
+.cards-1 .list-unstyled .flex-grow-1 {
+	margin-left: 0.5rem;
 }
