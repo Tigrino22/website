@@ -1,13 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base/base_admin.html.twig' %}
 
 {% block title %}{{parent()}} : Administration{% endblock %}
 
 {% block body %}
 <div class="mt-10">
+    {% include "admin/base/nav.html.twig" %}
     <div class="d-flex justify-content-center">
         <h1>Page d'administration</h1>
     </div>
-    
 </div>
-
 {% endblock %}

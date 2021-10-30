@@ -1,0 +1,29 @@
+{% extends 'admin/base/base_admin.html.twig' %}
+
+{% block title %}{{parent()}} : Administration{% endblock %}
+
+{% block body %}
+<div class="mt-10">
+    {% include "admin/base/nav.html.twig" %}
+    <div class="d-flex justify-content-center w-100">
+        <h1>Création d'un articles</h1>
+    </div>
+
+    <div class="row">
+        {{ form_start(articleForm)}}
+
+            {{form_errors(articleForm)}}    
+
+
+            <div class="d-flex justify-content-center">
+                <div class="col-md-6">
+                {{form_widget(articleForm)}}
+                </div>
+            </div>
+
+
+        {{ form_end(articleForm)}}
+    </div>
+    
+</div>
+{% endblock %}
