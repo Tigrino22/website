@@ -17,12 +17,8 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title">{{article.title}}</h5>
-                                            <p class="card-text">{{article.content}} lorem</p>
-                                            <div class="d-flex justify-content-center">
-                                                <a href="#" class="btn btn-dark text-center my-2">Lire l'article</a>
-                                            </div>
-                                            <p class="text-end mt-3">{{article.FormatedDate}}</p>
-
+                                            <p class="card-text">{{article.content}}</p>
+                                            <p class="card-footer">{{article.CreatedAt | date('d-m-Y')}}</p>
                                         </div>
                                     </div>
                                 </div>

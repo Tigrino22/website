@@ -16,6 +16,10 @@
     flex-direction: column;
 }
 
+.h-300 {
+	height: 300px;
+}
+
 /********************/
 /*     Services     */
 /********************/
@@ -26,7 +30,7 @@
 
 .cards-1 .card {
 	margin-bottom: 5rem;
-	padding: 3rem 2rem;
+	padding: 3rem 2rem 1rem 2rem;
 	border: 2px solid #5e6576;
 	border-radius: 20px;
 	background-color: transparent;

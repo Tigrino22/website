@@ -14,7 +14,8 @@ class AdminController extends AbstractController
     {
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
-            'current_menu' => 'app_admin'
+            'current_menu' => 'app_admin',
+            'current_admin_menu' => 'app_admin_home',
         ]);
     }
 }
