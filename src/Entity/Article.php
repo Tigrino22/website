@@ -40,14 +40,11 @@ class Article
     private $slug;
 
     /**
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime_immutable")
      */
     private $created_at;
 
-    public function __construct()
-    {
-        $this->created_at = new \DateTimeImmutable();
-    }
     
     public function getId(): ?int
     {
@@ -69,6 +66,11 @@ class Article
     public function getContent(): ?string
     {
         return $this->content;
+    }
+
+    public function getFormatedContent(): ?string
+    {
+        return nl2br($this->content);
     }
 
     public function setContent(string $content): self
@@ -100,16 +102,9 @@ class Article
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
     public function getFormatedDate()
     {
-        return date_format($this->getCreatedAt(), "d-m-Y");
+        return date_format($this->getCreatedAt(), "d F Y");
     }
 
     public function setSlug(string $slug): self

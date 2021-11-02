@@ -5,13 +5,15 @@
 {% block body %}
 <div class="mt-10">
     {% include "admin/base/nav.html.twig" %}
-    <div class="d-flex justify-content-center container">
+    <div class="d-flex flex-column align-items-center container">
         <h1>Liste des articles</h1>
-        {% for message in app.flashes('success') %}
-        <div class="alert alert-success mt-3">
-            {{message}}
+        <div class="d-flex justify-content-center">
+            {% for message in app.flashes('success') %}
+            <div class="alert alert-success mt-3">
+                {{message}}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 
     

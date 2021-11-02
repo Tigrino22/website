@@ -16,46 +16,37 @@
         </div>
     </header>
 
-    <section>
-        <div id="services" class="cards-1">
-                <div class="container">
-                    <div class="row">
-                        
+    <div>
+        <section>
+            <div id="services" class="cards-1">
+                    <div class="container">
+                        <div class="row">
                             
-                            <!-- Card -->
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Landing page</h5>
-                                        <p>Lorem ipsum dolor sit amet, consect adipiscing elit nulla id nisl blah nor</p>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="d-flex">
-                                                <i class="fas fa-check"></i>
-                                                <div class="flex-grow-1">Ut tincidunt vitae enim non vehi</div>
-                                            </li>
-                                            <li class="d-flex">
-                                                <i class="fas fa-check"></i>
-                                                <div class="flex-grow-1">Phasellus vitae metus in felis</div>
-                                            </li>
-                                            <li class="d-flex">
-                                                <i class="fas fa-check"></i>
-                                                <div class="flex-grow-1">Fusce pulvinar eu mi ac molestie</div>
-                                            </li>
-                                            <li class="d-flex">
-                                                <i class="fas fa-check"></i>
-                                                <div class="flex-grow-1">Curabitur consequat nisl eget</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end of card -->
+                                {% for article in articles %}
+                                    
+                                
+                                    <!-- Card -->
+                                    <div class="col-lg-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{article.title}}</h5>
+                                                <p class="card-text">{{  article.formatedcontent | u.truncate(200, '...') | raw}}</p>
+                                                <div class="d-flex justify-content-center">
+                                                    <a href="#" class="btn btn-dark text-center my-2">Lire l'article</a>
+                                                </div>
+                                                <p class="text-end mt-3">{{article.FormatedDate}}</p>
 
-                    </div> <!-- end of row -->
-                </div> <!-- end of container -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of card -->
+                                {% endfor %}
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
             </div>
 
-    </section>
+        </section>
+    </div>
 </div>
 
 {% endblock %}
