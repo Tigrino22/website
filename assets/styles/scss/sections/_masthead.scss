@@ -2,11 +2,14 @@
 // Masthead
 // 
 
+
 .masthead {
     background: url(../../../assets/img/banner.jpg) no-repeat center center/cover;
     // Set top padding to 5rem plus the height of the fixed navbar
     padding-top: 4.5rem;
     height: 100vh;
+    z-index: 1;
+    
 
     // Styling for the iPhone X mockup in the masthead
     .masthead-device-mockup {
@@ -128,4 +131,8 @@
         }
     }
 
+}
+
+.overlay {
+    background-color: rgba(0,0,0,0.4); /* Black background with opacity */
 }
