@@ -1,0 +1,50 @@
+{% extends 'admin/base_admin.html.twig' %}
+
+{% block body %}
+    
+         <div class="d-flex flex-column align-items-center container my-4">
+                <h1>Liste des articles</h1>
+                <div class="d-flex justify-content-center">
+                    {% for message in app.flashes('success') %}
+                    <div class="alert alert-success mt-3">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
+          </div>
+
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Titre</th>
+              <th scope="col">Slug</th>
+              <th scope="col">Active</th>
+              <th scope="col">Création</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for article in articles %}
+              <tr>
+                <td>{{article.id}}</td>
+                <td>{{article.title}}</td>
+                <td>{{article.slug}}</td>
+                <td>{{article.IsActive}}</td>
+                <td>{{article.formateddate}}</td>
+                <td><a href="{{path('app_admin_article_edit', {'id': article.id})}}" class="btn btn-secondary btn-sm">Modifier</a></td>
+              </tr>  
+            {% endfor %}
+
+            
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+
+
+{% endblock %}

@@ -24,7 +24,7 @@
 /*     Services     */
 /********************/
 .cards-1 {
-	padding-top: 3rem;
+	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
 }
 
@@ -34,6 +34,10 @@
 	border: 2px solid #5e6576;
 	border-radius: 20px;
 	background-color: transparent;
+}
+
+.cards-1 p {
+	font-size: 0.875rem;
 }
 
 .cards-1 .card-icon {
@@ -75,4 +79,14 @@
 
 .cards-1 .list-unstyled .flex-grow-1 {
 	margin-left: 0.5rem;
+}
+
+/********************/
+/*  Administration  */
+/********************/
+
+
+.sidebar-admin {
+	position: fixed;
+	left: 0.5rem;
 }
