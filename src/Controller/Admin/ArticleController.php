@@ -88,4 +88,29 @@ class ArticleController extends AbstractController
             'articleForm' => $articleForm->createView(),
         ]);
     }
+
+    #[Route('/remove/{id}', name: 'remove')]    
+    public function remove(Request $request, Article $article): Response
+    {
+ 
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($article);
+        $em->flush();
+
+        $this->addFlash('success', 'L\'article a été supprimé avec succès !');
+
+        return $this->redirect($this->generateUrl('app_admin_article_home'));
+
+    }
+
+    #[Route('/setActive/{id}', name: 'SetActive')]
+    public function setActive(Article $article): Response
+    {
+        $article->setIsActive(($article->getIsActive())?false:true);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($article);
+        $em->flush();
+
+        return new Response("true");
+    }
 }
