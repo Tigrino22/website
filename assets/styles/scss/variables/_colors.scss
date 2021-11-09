@@ -6,10 +6,12 @@
 
 $blue: #2937f0;
 $purple: #9f1ae2;
+$grey: #25252b;
 
 // Override Bootstrap default state colors
 
 $primary: $blue;
-$secondary: $purple;
+$secondary: $grey;
+
 
 @import "./custum_val_color";

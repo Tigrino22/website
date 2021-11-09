@@ -18,9 +18,59 @@
 				</div>
 			</div>
 
-
 			{{ form_end(articleForm)}}
+
+			<h3 class="d-flex justify-content-center w-100">Images de l'article</h3>
+			<div class="d-flex justify-content-center">
+				{% for image in article.images %}
+					<div class="d-flex flex-column align-items-center">
+						<img src="{{ asset('uploads/images/' ~ image.name) }}" width="150px" alt="photo">
+						
+						<a href="#" type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" 
+						data-bs-target="#modale-delete">
+									Supprimer
+								</a>
+
+											<!-- The Modal -->
+						<div class="modal fade" id="modale-delete">
+							<div class="modal-dialog">
+								<div
+									class="modal-content">
+
+									<!-- Modal Header -->
+									<div class="modal-header">
+										<h4 class="modal-title">Supprimer une photo</h4>
+										<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+									</div>
+
+									<!-- Modal body -->
+									<div class="modal-body">
+										Êtes-vous sûr de vouloir supprimer cette photo?
+									</div>
+
+									<!-- Modal footer -->
+									<div class="modal-footer">
+									<form method="post" action="{{ path('app_admin_article_remove_image', {'id': image.id}) }}" >
+										<input type="hidden" name="_method" value="DELETE">
+										<input type="hidden" name="_token" value="{{csrf_token('delete' ~ image.id) }}">
+										<button type="submit" class="btn btn-danger">Supprimer</button>
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+									</form>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						
+					</div>
+				{% endfor %}
+			</div>
+
 		</div>
 
 	</div>
-</div>{% endblock %}
+</div>
+
+{% endblock %}
+
