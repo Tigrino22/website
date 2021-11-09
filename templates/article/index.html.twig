@@ -1,37 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} : Articles{% endblock %}
+{% block title %}
+	{{ parent() }}
+	: Articles
+{% endblock %}
 
 {% block body %}
-<div>
-    <section>
-        <div id="services" class="cards-1">
-                <div class="container">
-                    <div class="row">
-                        
-                            {% for article in articles %}
-                                
-                            
-                                <!-- Card -->
-                                <div class="col-lg-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{article.title}}</h5>
-                                            <p class="card-text">{{  article.formatedcontent | u.truncate(200, '...') | raw}}</p>
-                                            <div class="d-flex justify-content-center">
-                                                <a href="#" class="btn btn-dark text-center my-2">Lire l'article</a>
-                                            </div>
-                                            <p class="text-end mt-3">{{article.FormatedDate}}</p>
+	<div>
+		<section class="mt-4 d-flex flex-column align-items-center">
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end of card -->
-                            {% endfor %}
-                    </div> <!-- end of row -->
-                </div> <!-- end of container -->
-            </div>
+			<h2 class="my-3">Nos articles</h2>
 
-    </section>
-</div>
+			<div class="container">
+				<div class="row">
+
+					{% for article in articles %}
+
+						<!-- start card -->
+						<div class="col-lg-6">
+							<div class="card mb-3">
+								<div class="row g-0">
+									<div class="col-lg-4">
+										{% if article.images[0].name is defined %}
+											<div class="card-img-body">
+												<img class="card-img" src="{{ asset('uploads/images/' ~ article.images[0].name) }}" alt="Card image cap">
+											</div>
+										{% endif %}
+									</div>
+									<div class="col-lg-8">
+										<div class="card-body">
+											<h5 class="card-title">{{article.title}}</h5>
+											<p class="card-text">{{  article.formatedcontent | u.truncate(250, '...') | raw}}</p>
+											<p class="card-text">
+												<small class="text-muted">{{article.FormatedDate}}</small>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- end of card -->
+					{% endfor %}
+				</div>
+				<!-- end of row -->
+			</div>
+			<!-- end of container -->
+
+
+		</section>
+	</div>
 {% endblock %}

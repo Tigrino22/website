@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Article;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,6 +22,12 @@ class ArticleType extends AbstractType
             ->add('content', CKEditorType::class, [
                 'label' => 'Contenu',
                 'attr' => array('rows' => 20)
+            ])
+            ->add('images', FileType::class, [
+                'label' => 'Photos',
+                'multiple' => true,
+                'mapped' => false,
+                'required' => false
             ])
             // ->add('is_active')
             // ->add('slug')

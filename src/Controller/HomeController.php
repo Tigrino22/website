@@ -14,12 +14,12 @@ class HomeController extends AbstractController
     public function index(ArticleRepository $repoArticles): Response
     {
 
-        $threeLastsArticles = $repoArticles->findThreeDesc();
+        $fourLastsArticles = $repoArticles->findFourDesc();
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'current_menu' => 'app_home',
-            'articles' => $threeLastsArticles,
+            'articles' => $fourLastsArticles,
         ]);
     }
 

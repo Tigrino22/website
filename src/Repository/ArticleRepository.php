@@ -28,11 +28,11 @@ class ArticleRepository extends ServiceEntityRepository
         ;
     }
 
-    public function findThreeDesc()
+    public function findFourDesc()
     {
         return $this->createQueryBuilder('a')
             ->orderBy('a.created_at', 'DESC')
-            ->setMaxResults(3)
+            ->setMaxResults(4)
             ->getQuery()
             ->getResult()
         ;
